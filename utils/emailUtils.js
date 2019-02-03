@@ -26,10 +26,10 @@ module.exports = {
         i < rows.length;
         i++
       ) {
-        const sessionDate = moment(rows[i].sessiondate).format("X");
+        let sessionDate = moment(rows[i].sessiondate).format("X");
 
         if (sessionDate === tomorrowsDate) {
-          const {
+          let {
             studentemail,
             studentname,
             sessiondate,
@@ -37,11 +37,11 @@ module.exports = {
             studenttz,
             zoomlink
           } = rows[i];
-          const timeDate = `${moment(sessiondate).format(
+          let timeDate = `${moment(sessiondate).format(
             "ddd, MMM Do"
           )} ${studentsessiontime} ${studenttz}`;
-          const name = studentname.split(" ")[0];
-          const emailInfo = {
+          let name = studentname.split(" ")[0];
+          let emailInfo = {
             address: studentemail,
             name,
             timeDate,
